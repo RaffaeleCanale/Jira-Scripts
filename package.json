@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "release": "webpack --mode=release",
+    "watch": "webpack --progress --colors --watch",
+    "test": "mocha --compilers js:babel-core/register --require test/prepare.js --colors -w test/*/*",
+    "start": "node build/main.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2017": "^6.24.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6",
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "argv": "0.0.2",
+    "lodash": "^4.17.4",
+    "node-rest-client": "^3.1.0",
+    "winston": "^2.3.0"
+  }
+}
