@@ -24,7 +24,7 @@ module.exports = {
     externals: nodeModules,
     target: 'node',
     entry: {
-        main: './src/main'
+        index: './src/index'
     },
     output: {
         filename: '[name].js',
