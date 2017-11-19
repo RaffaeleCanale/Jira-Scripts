@@ -1,0 +1,120 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.drip {
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.drip:before {
+  position: absolute;
+  left: 92.5px;
+  top: 0;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #43A2CE;
+  border-radius: 50%;
+  opacity: 0;
+  animation: drip 2s ease infinite;
+}
+.drip:after {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border: solid 4px #43A2CE;
+  border-radius: 50%;
+  opacity: 0;
+  animation: splash 2s ease infinite;
+}
+
+@keyframes drip {
+  20% {
+    top: 0;
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.24, 0, 0.76, 0.14);
+  }
+  50% {
+    opacity: 1;
+    top: 200px;
+    animation-timing-function: ease-out;
+    width: 15px;
+    height: 15px;
+    left: 92.5px;
+  }
+  60% {
+    opacity: 1;
+    top: 160px;
+    width: 5px;
+    height: 5px;
+    animation-timing-function: ease-in;
+    left: 97.5px;
+  }
+  66% {
+    top: 200px;
+    opacity: 0;
+    animation-timing-function: ease-out;
+    left: 97.5px;
+  }
+  66.001% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes splash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    bottom: 50px;
+    left: 100px;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+  50.001% {
+    opacity: 1;
+  }
+  66% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 200px;
+    height: 100px;
+  }
+  66.001% {
+    bottom: 50px;
+    left: 100px;
+    opacity: 1;
+    width: 0px;
+    height: 0px;
+  }
+  86% {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 200px;
+    height: 100px;
+  }
+  86.001% {
+    opacity: 0;
+  }
+}
